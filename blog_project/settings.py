@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
     # mahally
     'posts.apps.PostsConfig',
-    'teatrarxiv',
     'corsheaders',
 ]
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
