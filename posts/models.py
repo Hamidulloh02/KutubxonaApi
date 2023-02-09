@@ -18,15 +18,6 @@ class Post(models.Model):
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    #
-    # def __str__(self):
-    #     return self.body
-    #
-    # def get_questions(self):
-    #     body = list(self.raw_questions.all())
-    #     random.shuffle(body )
-    #     return body [:self.number_of_questions]
-
     class Meta:
         ordering = ['-created_at']
     def __str__(self):
@@ -41,3 +32,7 @@ class Video(models.Model):
         ordering = ['-created_at']
     def __str__(self):
         return self.video_title
+class Model1(models.Model):
+    id = models.BigAutoField(primary_key=True)
+
+# class
