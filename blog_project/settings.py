@@ -157,9 +157,11 @@ CKEDITOR_RESTRICT_BY_USER = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
+#Setting htpp
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Jazzmin configuration
-
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "Guliston Teatr jurnallari birlashgan tahririyati",
@@ -171,13 +173,13 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Admistratsiya",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "",
+    "site_logo": "images/librarylogo.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "",
+    "login_logo": "images/librarylogo.png",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": "",
+    "login_logo_dark": "images/librarylogo.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-square",
