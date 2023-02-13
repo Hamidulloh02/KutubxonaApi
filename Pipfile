@@ -15,6 +15,7 @@ django-cors-headers = "*"
 django-ckeditor = "*"
 pillow = "*"
 wheel = "*"
+certbot-django = "*"
 
 [dev-packages]
 
