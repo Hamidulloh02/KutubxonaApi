@@ -17,11 +17,11 @@ class Contributor(models.Model):
 
 # Create your models here.p
 class Post(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=500)
-    bio = RichTextField()
-    image = models.ImageField(upload_to='images/', blank=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True,verbose_name="Kategoriya")
+    author = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name="Muallif")
+    title = models.CharField(max_length=500,verbose_name="Sarlavha")
+    bio = RichTextField(verbose_name="Kitobdan parcha")
+    image = models.ImageField(upload_to='images/', blank=True,verbose_name="Kitob suratini yuklash")
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
