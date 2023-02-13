@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "drf_yasg",
     'rest_framework_swagger',
 
-    'certbot_django.server',
     # mahally
     'posts.apps.PostsConfig',
     'corsheaders',
