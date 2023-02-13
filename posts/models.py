@@ -8,13 +8,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Contributor(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    audio = models.FileField(upload_to='sounds/', blank=True)
+
+    def __str__(self):
+        return self.audio
+
 # Create your models here.p
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=500)
-    body = RichTextField()
-    profile = models.ImageField(upload_to='images/', blank=True)
+    bio = RichTextField()
+    image = models.ImageField(upload_to='images/', blank=True)
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
