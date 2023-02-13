@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'allauth.account',
     "drf_yasg",
     'rest_framework_swagger',
-    'asymmetric_jwt_auth',
-    'certbot_django.server',
 
     # mahally
     'posts.apps.PostsConfig',
