@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from rest_framework import filters
 class Category(models.Model):
+    poster = models.ImageField(upload_to='images/',blank=True,verbose_name="Kategoriya posteri")
     name = models.CharField(max_length=30)
     is_active = models.BooleanField(default=True)
 
@@ -22,13 +24,17 @@ class Post(models.Model):
     title = models.CharField(max_length=500,verbose_name="Sarlavha")
     bio = RichTextField(verbose_name="Kitobdan parcha")
     image = models.ImageField(upload_to='images/', blank=True,verbose_name="Kitob suratini yuklash")
+    contributor = models.ForeignKey(Contributor,on_delete=models.SET_NULL,null=True,verbose_name="Kontributor")
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['username', 'email']
     class Meta:
         ordering = ['-created_at']
     def __str__(self):
         return self.title
+    0
 class Video(models.Model):
     video_title = models.CharField(max_length=500)
     video_link = models.CharField(max_length=500)

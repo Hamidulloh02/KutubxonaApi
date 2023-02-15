@@ -34,5 +34,6 @@ class ContributorViewSet(ModelViewSet):
     serializer_class = ContributorSerializer
 
 class ContributorListAPIView(generics.ListAPIView):
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Category.objects.filter(is_active=True).order_by('-id')
     serializer_class = ContributorSerializer

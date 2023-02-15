@@ -8,7 +8,7 @@ from .models import Post, Category,Video,Contributor
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('id','name')
+        fields = ('id','name','poster')
 class ContributorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contributor
@@ -18,7 +18,7 @@ class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     class Meta:
         model = Post
-        fields = ('id', 'author', 'title', 'bio', 'created_at', 'image','category')
+        fields = ('id', 'author', 'title', 'bio', 'created_at', 'image','category','contributor')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
