@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-from rest_framework import filters
 class Category(models.Model):
     poster = models.ImageField(upload_to='images/',blank=True,verbose_name="Kategoriya posteri")
     name = models.CharField(max_length=30)
@@ -28,8 +27,6 @@ class Post(models.Model):
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['username', 'email']
     class Meta:
         ordering = ['-created_at']
     def __str__(self):

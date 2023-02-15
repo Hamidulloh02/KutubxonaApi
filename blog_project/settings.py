@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'allauth.account',
     "drf_yasg",
     'rest_framework_swagger',
-    'django_filters',
     # mahally
     'posts.apps.PostsConfig',
     'corsheaders',
@@ -50,7 +49,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
